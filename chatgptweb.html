@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+        .response {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Interactive User Input</h2>
+        <input type="text" id="userInput" placeholder="Type something...">
+        <button onclick="interact()">Submit</button>
+        <p id="output" class="response"></p>
+    </div>
+
+    <script>
+        function interact() {
+            let input = document.getElementById("userInput").value;
+            let response;
+            if (input.toLowerCase() === "hello") {
+                response = "Hi there! How can I assist you today?";
+            } else if (input.toLowerCase() === "how are you") {
+                response = "I'm just a website, but I'm doing great!";
+            } else {
+                response = "You said: " + input;
+            }
+            document.getElementById("output").innerText = response;
+        }
+    </script>
+</body>
+</html>

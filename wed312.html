@@ -1,0 +1,141 @@
+<!DOCTYPE html> <!--The DOLPHIN part of the code is a website that I created 4 years ago 
+so i just recycled everything that I had in the just to give the website some information -->
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Tee's WEB</title>
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        input {
+            padding: 1%;
+            background-color: lightblue;
+        }
+
+        select {
+            padding: 1%;
+            margin-top: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            border: 12%;
+            border-style: dotted dashed solid double;
+        }
+
+        .facts {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 10%;
+        }
+
+        #div1 {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: aliceblue;
+            font-size: 20px;
+            text-align: right;
+        }
+
+        #div1, #div2 {
+            padding: 3%;
+            margin: 1%;
+            width: 40%;
+            float: left;
+            text-align: left;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: aliceblue;
+            font-size: 20px;
+            border: double dimgray;
+        }
+	#div1:hover{
+	background-color: lightyellow;
+}
+	#div2:hover{
+	background-color: lightyellow;
+}
+
+        .questions {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width: 10%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Background Color Picker</h1>
+    <br>
+    <h2> Please type your date of birth to use color picker!!! </h2>
+    <input type="date" id="dob" placeholder="Enter your birth date">
+    <button id="submitBtn">Submit</button>
+
+    <script>
+        document.getElementById('submitBtn').addEventListener('click', function () {
+            let dobInput = document.getElementById('dob').value;
+            
+            if (!dobInput) {
+                alert("Please enter your date of birth.");
+                return;
+            }
+
+            let dob = new Date(dobInput);
+            let today = new Date();
+            let age = today.getFullYear() - dob.getFullYear();
+            let monthDifference = today.getMonth() - dob.getMonth();
+
+            if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < dob.getDate())) {
+                age--;
+            }
+
+            if (age < 10) {
+                alert("You must be at least 10 years old to use this website.");
+            } else {
+                let color = prompt("You are older than 10! Please choose a color (e.g., red, blue, green):");
+                document.body.style.backgroundColor = color;
+            }
+        });
+    </script>
+
+    <hr>
+
+    <div id="div1">
+        <h2 class="facts">Facts</h2>
+        <ul>
+            <li>Almost 40 species of dolphins swim in the world's oceans. Most live in tropical and temperate oceans in shallow waters, and five species live in rivers.</li>
+            <li>Dolphins are carnivores. Their prey includes fish, squid, and crustaceans. A 260-pound dolphin eats around 33 pounds of fish daily.</li>
+            <li>Dolphins can live up to 50 years! While the average lifespan is about 17 years, some live up to 50 years.</li>
+            <li>Dolphins help the sick or injured members of their pod, often tending to them with care.</li>
+            <li>Dolphins sleep with only half of their brain active to stay alert for predators and to continue breathing.</li>
+            <li>Dolphins are very friendly to both humans and other animals, often seen playing and interacting with them.</li>
+            <li>Dolphins have delicate skin but heal quickly, even from deep wounds.</li>
+            <li>They stick with their mothers for a long time, sometimes up to 8 years!</li>
+            <li>Dolphins can jump as high as 20 feet out of the water!</li>
+            <li>The "killer whale," or Orca, is actually a type of dolphin.</li>
+        </ul>
+    </div>
+
+    <div id="div2">
+        <h2 class="questions">Questions</h2>
+        <ul>
+            <li><strong>How many teeth do bottlenose dolphins have?</strong>  
+                They have 72-104 teeth, but they don’t chew food—they swallow it whole.</li>
+            
+            <li><strong>Do dolphins drink water?</strong>  
+                No, they get fresh water from the fish they eat.</li>
+            
+            <li><strong>Can dolphins see above the water?</strong>  
+                Yes! Their eyes are designed for both underwater and above-water vision.</li>
+            
+            <li><strong>Can dolphins see colors?</strong>  
+                Studies suggest they can see shades of grey and the blue-green spectrum.</li>
+            
+            <li><strong>Do dolphins have hair?</strong>  
+                Yes, but only at birth. The hair falls out shortly after.</li>
+            
+            <li><strong>Are dolphins fish?</strong>  
+                No, they are mammals. They breathe air, give birth to live young, and nurse their babies.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
